@@ -61,6 +61,9 @@ script:
   # Check open files limit.
   - >
     sudo su -l mysql -s /bin/sh -c 'ulimit -n' | tail -1
+    | grep -q 65535
+    && (echo 'Open files limit test: pass' && exit 0)
+    || (echo 'Open files limit test: fail' && exit 1)
 
 notifications:
   email: false
