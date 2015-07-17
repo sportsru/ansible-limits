@@ -1,0 +1,6 @@
+# test file for limits
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ansible-limits
