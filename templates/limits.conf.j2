@@ -1,5 +1,0 @@
-# {{ ansible_managed }}
-{% for domain in limits_domains %}
-{% for limit in domain.limits %}{{domain.name}} {{limit}}
-{% endfor %}
-{% endfor %}
