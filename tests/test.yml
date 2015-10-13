@@ -3,7 +3,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-limits
+    - ../../
   vars:
     limits_conf_d_files:
       000-percona-server.conf:
