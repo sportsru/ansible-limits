@@ -1,3 +1,4 @@
 # defaults file for limits
 ---
 limits_conf_d_files: {}
+limits_enforce_pam_limits: true

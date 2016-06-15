@@ -6,6 +6,7 @@
     dest: "{{ item }}"
     line: 'session required pam_limits.so'
   with_items: "{{ limits_pam_files }}"
+  when: limits_enforce_pam_limits
   tags: [configuration, limits, limits-pam]
 
 - name: update configuration file(s)
