@@ -10,6 +10,8 @@ None
 
 #### Variables
 
+* `limits_pam_files` [default: `['/etc/pam.d/common-session', '/etc/pam.d/common-session-noninteractive']`]: Pam files to enable limits for
+
 * `limits_conf_d_files` [default: `{}`]: Limits configuration file declarations
 * `limits_conf_d_files.key`: The name of the limits configuration file (e.g `000-percona-server.conf`)
 * `limits_conf_d_files.key.domain`: The domain (e.g `mysql`)
