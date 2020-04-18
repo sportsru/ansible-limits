@@ -1,6 +1,7 @@
 # meta file for limits
 ---
 galaxy_info:
+  role_name: limits
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manage (security)limits in Debian-like systems
