@@ -3,16 +3,15 @@
 - hosts: localhost
   connection: local
   become: true
+  pre_tasks:
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
-  vars:
-    limits_conf_d_files:
-      000-percona-server.conf:
-        - domain: mysql
-          type: soft
-          item: nofile
-          value: 65535
-        - domain: mysql
-          type: hard
-          item: nofile
-          value: 65535
+  post_tasks:
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/post.yml"

@@ -1,0 +1,12 @@
+# vars file for limits
+---
+limits_conf_d_files:
+  000-memcached.conf:
+    - domain: memcache
+      type: soft
+      item: nofile
+      value: 65535
+    - domain: memcache
+      type: hard
+      item: nofile
+      value: 65535
