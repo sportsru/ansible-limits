@@ -5,6 +5,7 @@
     create: true
     dest: "{{ item }}"
     line: 'session required pam_limits.so'
+    mode: 0644
   with_items: "{{ limits_pam_files }}"
   tags:
     - configuration

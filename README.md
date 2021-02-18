@@ -1,6 +1,6 @@
 ## limits
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-limits.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-limits)
+[![CI](https://github.com/Oefenweb/ansible-limits/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-limits/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-limits-blue.svg)](https://galaxy.ansible.com/Oefenweb/limits)
 
 Manage (security)limits in Debian-like systems.
