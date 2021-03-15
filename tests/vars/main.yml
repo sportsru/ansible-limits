@@ -1,4 +1,4 @@
-# vars file for limits
+# vars file
 ---
 limits_conf_d_files:
   000-memcached.conf: "{{ limits_conf_d_file_memcached }}"

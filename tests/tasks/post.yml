@@ -1,4 +1,4 @@
-# pre test file for limits
+# pre test file
 ---
 - name: check open files limit
   shell: >

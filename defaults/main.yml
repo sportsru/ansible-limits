@@ -1,4 +1,4 @@
-# defaults file for limits
+# defaults file
 ---
 limits_pam_files:
   - /etc/pam.d/common-session
