@@ -1,7 +1,7 @@
 # pre test file
 ---
 - name: install test service
-  apt:
+  ansible.builtin.apt:
     name:
       - memcached
     state: "{{ apt_install_state | default('latest') }}"
