@@ -32,7 +32,7 @@ None
 ---
 - hosts: all
   roles:
-    - limits
+    - oefenweb.limits
 ```
 
 ##### Percona Server (open_files_limit)
@@ -41,7 +41,7 @@ None
 ---
 - hosts: all
   roles:
-    - limits
+    - oefenweb.limits
   vars:
     limits_conf_d_files:
       000-percona-server.conf:
