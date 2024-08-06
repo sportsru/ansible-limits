@@ -1,7 +1,6 @@
 ## limits
 
-[![CI](https://github.com/Oefenweb/ansible-limits/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-limits/actions?query=workflow%3ACI)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-limits-blue.svg)](https://galaxy.ansible.com/Oefenweb/limits)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-limits.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-limits) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-limits-blue.svg)](https://galaxy.ansible.com/Oefenweb/limits)
 
 Manage (security)limits in Debian-like systems.
 
@@ -32,7 +31,7 @@ None
 ---
 - hosts: all
   roles:
-    - oefenweb.limits
+    - limits
 ```
 
 ##### Percona Server (open_files_limit)
@@ -41,7 +40,7 @@ None
 ---
 - hosts: all
   roles:
-    - oefenweb.limits
+    - limits
   vars:
     limits_conf_d_files:
       000-percona-server.conf:

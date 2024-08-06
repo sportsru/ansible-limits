@@ -1,17 +1,22 @@
-# test file
+# test file for limits
 ---
 - hosts: all
   remote_user: vagrant
   become: true
-  pre_tasks:
-    - name: include vars
-      ansible.builtin.include_vars: "{{ playbook_dir }}/vars/main.yml"
-    - name: include tasks
-      ansible.builtin.import_tasks: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
   post_tasks:
-    - name: include vars
-      ansible.builtin.include_vars: "{{ playbook_dir }}/vars/main.yml"
-    - name: include tasks
-      ansible.builtin.import_tasks: "{{ playbook_dir }}/tasks/post.yml"
+    - name: check limit
+      shell: su -l vagrant -s /bin/sh -c 'ulimit -n' | tail -1 | grep -q 65535
+      changed_when: false
+  vars:
+    limits_conf_d_files:
+      000-vagrant-server.conf:
+        - domain: vagrant
+          type: soft
+          item: nofile
+          value: 65535
+        - domain: vagrant
+          type: hard
+          item: nofile
+          value: 65535

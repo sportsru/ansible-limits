@@ -1,11 +1,10 @@
-# tasks file
+# tasks file for limits
 ---
 - name: configure pam files
-  ansible.builtin.lineinfile:
+  lineinfile:
     create: true
     dest: "{{ item }}"
     line: 'session required pam_limits.so'
-    mode: 0644
   with_items: "{{ limits_pam_files }}"
   tags:
     - configuration
@@ -13,7 +12,7 @@
     - limits-pam
 
 - name: update configuration file(s)
-  ansible.builtin.template:
+  template:
     src: etc/security/limits.conf.j2
     dest: "/etc/security/limits.d/{{ item.key }}"
     owner: root
